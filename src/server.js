@@ -23,6 +23,7 @@ app.post(`/${apiRoot}/add/:userId`, makeExpressCallback(cartController.post));
 app.get(`/${apiRoot}/get/:cartId`, makeExpressCallback(cartController.get));
 app.get(`/${apiRoot}/user/:userId`, makeExpressCallback(cartController.getByUser));
 app.put(`/${apiRoot}/:userId/addItem`, makeExpressCallback(cartController.addItem));
+app.put(`/${apiRoot}/:userId/deleteItem/:product_id`, makeExpressCallback(cartController.deleteItem));
 
 // Get port from environment and store in Express.
 var port = process.env.CARTS_PORT;
