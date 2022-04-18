@@ -1,0 +1,49 @@
+{
+  "name": "carts",
+  "version": "0.0.1",
+  "description": "Carts microservice for ShopUnicorn e-commerce store",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm run clean && babel src -d dist",
+    "clean": "rm -rf dist",
+    "db": "babel-node ./db/index.js",
+    "start": "npm run build && npm run db",
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "devdebug": "DEBUG=carts:* npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pink-fluffy/carts.git"
+  },
+  "author": "Sidharth Sudarsan <hi@sidharth.me> (https://github.com/sidoverflow)",
+  "license": "SEE LICENSE",
+  "bugs": {
+    "url": "https://github.com/pink-fluffy/carts/issues"
+  },
+  "homepage": "https://github.com/pink-fluffy/carts#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "express": "~4.16.1",
+    "fs": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "http-status-codes": "^2.2.0",
+    "jade": "^0.29.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.7",
+    "morgan": "~1.9.1",
+    "nanoid": "^3.3.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.16.11",
+    "eslint": "^8.11.0",
+    "nodemon": "^2.0.15"
+  }
+}
