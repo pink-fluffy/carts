@@ -9,6 +9,12 @@ class CartDAO {
 
 		return createdCart;
 	}
+
+	async addItem(cartItem) {
+		this.items.push(cartItem);
+		this.save();
+		return this;
+	}
 }
 
 export default CartDAO;

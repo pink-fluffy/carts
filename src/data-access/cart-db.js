@@ -3,7 +3,8 @@ export default function makeCartsDb({ makeDb, cartModel }) {
 		insert,
 		findByUser,
 		findAll,
-		findById
+		findById,
+		addItem
 	});
 
 	async function insert(cart) {
@@ -28,6 +29,13 @@ export default function makeCartsDb({ makeDb, cartModel }) {
 		const db = await makeDb();
 
 		const result = cartModel.find({});
+		return result;
+	}
+
+	async function addItem(userId, cartItem) {
+		const db = await makeDb();
+		const cart = await findByUser(userId);
+		const result = await cart.addItem(cartItem);
 		return result;
 	}
 }

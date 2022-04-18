@@ -13,7 +13,7 @@ export default function makeAddCart(cartsDb) {
 		const cart = makeCart({ userId });
 		const exists = await cartsDb.findByUser(userId);
 		if (exists) {
-			throw { status: enums.ERRORS.DUPLICATE_CART.status, message: enums.ERRORS.DUPLICATE_CART.message };
+			return exists;
 		}
 
 		return cartsDb.insert({
