@@ -1,4 +1,3 @@
-import makeCartItem from '../cart-item';
 import enums from '../enums';
 /**
  *
